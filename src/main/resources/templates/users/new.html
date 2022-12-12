@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New User</title>
+</head>
+<body>
+    <form th:method="POST" th:action="@{/users}" th:object="${user}">
+        <label for="name">Name</label>
+        <input type="text" th:field="*{name}" id="name">
+        <div style="color:gray" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Error text</div>
+        <br>
+        <label for="lastname">Lastname</label>
+        <input type="text" th:field="*{lastname}" id="lastname">
+        <div style="color:gray" th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}">Error text</div>
+        <br>
+        <label for="age">Age</label>
+        <input type="number" th:field="*{age}" id="age">
+        <div style="color:gray" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Error text</div>
+        <br>
+        <label for="email">Email</label>
+        <input type="text" th:field="*{email}" id="email">
+        <div style="color:gray" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Error text</div>
+        <br>
+        <label for="password">Password</label>
+        <input type="text" th:field="*{password}" id="password">
+        <div style="color:gray" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Error text</div>
+        <br>
+        <br>
+        <input type="submit" value="Add">
+    </form>
+</body>
+</html>
