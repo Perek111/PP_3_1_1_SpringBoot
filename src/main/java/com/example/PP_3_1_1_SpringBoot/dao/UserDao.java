@@ -6,16 +6,14 @@ import com.example.PP_3_1_1_SpringBoot.models.User;
 import java.util.List;
 
 public interface UserDao {
-    public List<User> getAllUsers();
+    public List<User> findAll();
 
-    public void addUser(User user);
+    public User findById(long id);
 
-    public User getUser(long id);
+    public void save(User user);
 
-    public void editUser(User user);
+    public void update(User user);
 
-    public void deleteUser(long id); //by id
-
-    public void deleteUser(User user); //by object
+    public void deleteById(long id); //by id
 
 }
